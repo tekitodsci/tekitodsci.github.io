@@ -1,12 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tekitodsci's Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kaori matsumoto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory:      #faf7f2;
+      --cream:      #f0e9de;
+      --tan:        #c9a97a;
+      --terracotta: #b5673c;
+      --brown:      #6b4226;
+      --text:       #3a2e26;
+      --muted:      #8a7060;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    /* ===== NAME ===== */
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--brown);
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+      line-height: 2;
+      text-align: left;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--tan);
+      margin: 0 auto 40px;
+    }
+
+    /* ===== LINKS ===== */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* ボタンを増やすときはこの <a> ブロックをコピーして追加するだけ */
+    .link-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+    }
+
+    .link-btn.primary {
+      background: var(--brown);
+      color: var(--ivory);
+    }
+    .link-btn.primary:hover {
+      background: var(--terracotta);
+    }
+
+    .link-btn.secondary {
+      background: transparent;
+      border-color: var(--tan);
+      color: var(--brown);
+    }
+    .link-btn.secondary:hover {
+      background: var(--cream);
+      border-color: var(--terracotta);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 48px;
+      font-size: 0.72rem;
+      color: var(--tan);
+      letter-spacing: 0.1em;
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>>This is hosted on GitHub Pages.</p>
+
+<div class="card">
+
+  <h1 class="name">kaori matsumoto</h1>
+  <p class="tagline">
+    大学卒業後、編集者として主にWebメディア立ち上げ・運営に従事。<br>
+    読売新聞「ヨリモ」、有料メルマガ「津田大介のメディアの現場」、<br>
+    ニュースサイト「ハフポスト日本版」など。<br>
+    ライターとしては雑誌・Webメディアで実績あり。<br>
+    2020年3月、早稲田大学大学院政治学研究科ジャーナリズムコース修了。
+  </p>
+  <div class="divider"></div>
+
+  <div class="links">
+
+    <!-- ===== ボタンを追加・編集するときは、ここにコピペするだけ ===== -->
+
+    <!-- primaryスタイル（塗りつぶし）: メインのリンクに使う -->
+    <a class="link-btn primary" href="https://x.com/tekitodsci" target="_blank" rel="noopener">
+      X
+    </a>
+
+    <!-- secondaryスタイル（枠線のみ）: サブのリンクに使う -->
+    <a class="link-btn secondary" href="https://fori.io/kmatsumoto" target="_blank" rel="noopener">
+      ポートフォリオ
+    </a>
+
+    <!-- 増やしたいときはこの行をコピーしてhrefとテキストを変えるだけ -->
+    <!-- <a class="link-btn secondary" href="https://..." target="_blank" rel="noopener">リンク名</a> -->
+
+  </div>
+
+</div>
+
+<footer>© 2026 kaori matsumoto</footer>
+
 </body>
 </html>
