@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相談に乗ります | 松本香織</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory:      #faf7f2;
+      --cream:      #f0e9de;
+      --tan:        #c9a97a;
+      --terracotta: #b5673c;
+      --brown:      #6b4226;
+      --text:       #3a2e26;
+      --muted:      #8a7060;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 64px 24px 80px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    /* ===== ヘッダー ===== */
+    .back-link {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      margin-bottom: 40px;
+    }
+    .back-link:hover { color: var(--terracotta); }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--brown);
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 12px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--tan);
+      margin: 36px 0;
+    }
+
+    /* ===== サービスカード ===== */
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--cream);
+      border-radius: 10px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+    }
+
+    .service-label {
+      font-size: 0.72rem;
+      color: var(--tan);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--brown);
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .service-desc {
+      font-size: 0.85rem;
+      line-height: 2;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .service-detail {
+      font-size: 0.82rem;
+      line-height: 2;
+      color: var(--muted);
+      margin-bottom: 24px;
+      padding-left: 14px;
+      border-left: 2px solid var(--cream);
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--brown);
+    }
+
+    .price-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--brown);
+      color: var(--ivory);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .cta-btn:hover { background: var(--terracotta); }
+
+    /* ===== 共通案内 ===== */
+    .note-section {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 8px;
+    }
+
+    .note-section h3 {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      color: var(--brown);
+      margin-bottom: 14px;
+    }
+
+    .note-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .note-section ul li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 2;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .note-section ul li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--tan);
+    }
+
+    /* ===== フッター ===== */
+    footer {
+      margin-top: 64px;
+      font-size: 0.72rem;
+      color: var(--tan);
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--tan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--terracotta);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <a class="back-link" href="index.html">← 松本香織</a>
+
+  <h1 class="page-title">相談に乗ります</h1>
+  <p class="intro">
+    ことばを扱う仕事を、ずっとしてきました。<br>
+    編集者として、ライターとして、そして大学院でジャーナリズムを学んだ者として。<br>
+    「話す」ことで、物事はよく見える。そう信じています。<br>
+    どうぞ、遠慮なく。
+  </p>
+
+  <div class="divider"></div>
+
+  <!-- ===== サービス 1 ===== -->
+  <div class="service-card">
+    <p class="service-label">Service 01</p>
+    <h2 class="service-title">ライター・編集者として<br>商業媒体で働きたい方へ</h2>
+    <p class="service-desc">
+      「書く仕事がしたい」という気持ちはあるけれど、どこから始めればいいかわからない。
+      ポートフォリオって何を入れればいい？ 媒体への売り込みはどうすれば？
+      フリーランスと会社員、どちらが自分に向いている？<br><br>
+      読売新聞・ハフポスト・有料メルマガ等でWebメディアの立ち上げ・運営に携わり、
+      自らもライターとして雑誌・Webで執筆してきた経験をもとに、
+      あなたの現在地と目標に合わせて具体的なアドバイスをお伝えします。
+    </p>
+    <p class="service-detail">
+      こんな方におすすめ：未経験からライター・編集者を目指している方 / 副業・フリーランスへの転向を考えている方 / 媒体選びや売り込み方に悩んでいる方 / ポートフォリオや自己PR文のブラッシュアップをしたい方
+    </p>
+    <div class="price-row">
+      <span class="price">¥5,000</span>
+      <span class="price-note">/ 1時間（オンライン）</span>
+    </div>
+    <a class="cta-btn" href="https://docs.google.com/forms/d/15O4c5JuXxMfW3AqVZL24gryNHoQUl0s7HZ6nEuuGNwU/edit" target="_blank" rel="noopener">
+      申し込む・問い合わせる
+    </a>
+  </div>
+
+  <!-- ===== サービス 2 ===== -->
+  <div class="service-card">
+    <p class="service-label">Service 02</p>
+    <h2 class="service-title">モヤモヤを、ことばにする</h2>
+    <p class="service-desc">
+      なんとなく気持ちが晴れない。誰かに話したいけれど、何を話せばいいのかわからない。
+      うまく説明できないまま、時間だけが過ぎていく——そんなことはありませんか。<br><br>
+      わたしは「聞く」ことが好きです。急かさず、評価せず、ただそこにいる。
+      話しながら少しずつ輪郭が見えてきたとき、それを一緒にことばにする。
+      すっきりしなくていい、結論が出なくていい。
+      ただ、自分の中にあるものを声に出してみる。それだけでいい。
+    </p>
+    <p class="service-detail">
+      こんな方におすすめ：自分の気持ちを整理したい方 / 誰かに話を聞いてもらいたいけれど身近な人には言いにくい方 / 転職・進路・人間関係など判断に迷っている方 / 日記や手帳に書いてもモヤが晴れない方
+    </p>
+    <div class="price-row">
+      <span class="price">¥5,000</span>
+      <span class="price-note">/ 1時間（オンライン）</span>
+    </div>
+    <a class="cta-btn" href="https://docs.google.com/forms/d/15O4c5JuXxMfW3AqVZL24gryNHoQUl0s7HZ6nEuuGNwU/edit" target="_blank" rel="noopener">
+      申し込む・問い合わせる
+    </a>
+  </div>
+
+  <!-- ===== 共通の案内 ===== -->
+  <div class="note-section">
+    <h3>ご利用の流れ・よくあるご質問</h3>
+    <ul>
+      <li>お申し込みフォームからご連絡いただき、日程を調整の上、Google Meetでお話しします</li>
+      <li>料金はセッション前日までにお振込みいただきます（振込先は日程確定後にお知らせします）</li>
+      <li>どちらのサービスも1回完結。継続利用も歓迎です</li>
+      <li>守秘義務を遵守します。お話の内容を第三者に開示することはありません</li>
+      <li>キャンセルは48時間前まで無料。それ以降のキャンセルはご返金できかねます</li>
+    </ul>
+    <p style="font-size:0.8rem;color:var(--muted);line-height:2;margin-top:16px;">
+      料金・キャンセル・守秘義務など、詳しくは<a href="consulting-rules.html" style="color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--tan);">ご利用にあたって</a>をご覧ください。
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 松本香織 &ensp;|&ensp;
+  <a href="terms.html">利用規約</a>
+</footer>
+
+</body>
+</html>

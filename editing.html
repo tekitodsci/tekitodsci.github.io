@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>編集・ライティング | 松本香織</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory:      #faf7f2;
+      --cream:      #f0e9de;
+      --tan:        #c9a97a;
+      --terracotta: #b5673c;
+      --brown:      #6b4226;
+      --text:       #3a2e26;
+      --muted:      #8a7060;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 64px 24px 80px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    /* ===== ナビ ===== */
+    .back-link {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      margin-bottom: 40px;
+    }
+    .back-link:hover { color: var(--terracotta); }
+
+    /* ===== ヘッダー ===== */
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--brown);
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+
+    .lead {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 2.1;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--tan);
+      margin: 36px 0;
+    }
+
+    /* ===== セクション ===== */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      color: var(--tan);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--brown);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .section p {
+      font-size: 0.85rem;
+      line-height: 2.1;
+      color: var(--text);
+    }
+
+    /* ===== できることリスト ===== */
+    .work-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .work-list li {
+      background: #fff;
+      border: 1px solid var(--cream);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-size: 0.8rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .work-list li::before {
+      display: block;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: var(--tan);
+      margin-bottom: 8px;
+    }
+
+    /* ===== 実績 ===== */
+    .career-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 14px;
+    }
+
+    .career-list li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 2;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .career-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--tan);
+    }
+
+    /* ===== フロー ===== */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 14px;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--cream);
+    }
+    .flow-step:last-child { border-bottom: none; }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--tan);
+      min-width: 28px;
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .step-body h3 {
+      font-size: 0.82rem;
+      color: var(--brown);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* ===== CTA ===== */
+    .cta-block {
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .cta-block p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 13px 32px;
+      background: var(--brown);
+      color: var(--ivory);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .cta-btn:hover { background: var(--terracotta); }
+
+    /* ===== フッター ===== */
+    footer {
+      margin-top: 64px;
+      font-size: 0.72rem;
+      color: var(--tan);
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+    footer a {
+      color: var(--tan);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--terracotta); }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <a class="back-link" href="index.html">← 松本香織</a>
+
+  <h1 class="page-title">編集・ライティング</h1>
+  <p class="lead">
+    「書く」「編む」を仕事にして、二十数年になります。<br>
+    個人の声をすくい上げることも、メディアのトーンをつくることも、
+    どちらも同じ「ことばを整える」仕事だと思っています。<br>
+    読む人のことを考えながら、あなたの伝えたいことをかたちにします。
+  </p>
+
+  <div class="divider"></div>
+
+  <!-- できること -->
+  <div class="section">
+    <p class="section-label">What I do</p>
+    <h2>できること</h2>
+    <ul class="work-list">
+      <li>記事執筆・編集</li>
+      <li>インタビュー取材・構成</li>
+      <li>コラム・エッセイの執筆</li>
+      <li>メルマガ・ニュースレター</li>
+      <li>広報・PR原稿の編集</li>
+      <li>校正・リライト</li>
+      <li>Webメディアの立ち上げサポート</li>
+      <li>ライターとのディレクション</li>
+    </ul>
+    <p style="font-size:0.8rem;color:var(--muted);line-height:2;margin-top:16px;">
+      上記以外でもお役に立てることがあれば、お気軽にご相談ください。<br>
+      <a href="https://docs.google.com/forms/d/15O4c5JuXxMfW3AqVZL24gryNHoQUl0s7HZ6nEuuGNwU/edit" target="_blank" rel="noopener" style="color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--tan);">お問い合わせフォームはこちら →</a>
+    </p>
+  </div>
+
+  <!-- 主な実績 -->
+  <div class="section">
+    <p class="section-label">Experience</p>
+    <h2>主な実績</h2>
+    <p>
+      Webメディア編集者として、大手メディアから独立系まで複数の媒体の立ち上げ・運営を担当してきました。
+      ニュース、カルチャー、社会問題など幅広いジャンルの記事を手がけた経験があります。
+    </p>
+    <ul class="career-list">
+      <li>読売新聞グループ Webメディア「ヨリモ」立ち上げ・編集</li>
+      <li>有料メルマガ「津田大介のメディアの現場」編集・運営</li>
+      <li>「ハフポスト日本版」ニュースサイト編集</li>
+      <li>雑誌・Webメディアへのライター寄稿多数</li>
+      <li>早稲田大学大学院 政治学研究科 ジャーナリズムコース修了（2020年）</li>
+    </ul>
+    <p style="font-size:0.8rem;color:var(--muted);line-height:2;margin-top:20px;">
+      執筆・編集実績の一覧は<a href="https://fori.io/kmatsumoto" target="_blank" rel="noopener" style="color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--tan);">ポートフォリオ</a>からご覧いただけます。
+    </p>
+  </div>
+
+  <!-- 依頼の流れ -->
+  <div class="section">
+    <p class="section-label">Flow</p>
+    <h2>依頼の流れ</h2>
+    <div class="flow">
+      <div class="flow-step">
+        <span class="step-num">01</span>
+        <div class="step-body">
+          <h3>お問い合わせ</h3>
+          <p>下のフォームから、依頼内容・媒体・スケジュール感などをざっくりお知らせください。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <span class="step-num">02</span>
+        <div class="step-body">
+          <h3>ヒアリング</h3>
+          <p>Google Meetまたは電話で一度、詳細を伺います。目的・読者・トーン・ボリューム感などをすり合わせます。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <span class="step-num">03</span>
+        <div class="step-body">
+          <h3>お見積もり・ご契約</h3>
+          <p>内容に応じてお見積もりをご提示します。ご納得いただけたら契約書を交わして進めます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <p>
+      まずはお気軽にご相談ください。<br>
+      依頼の規模や形式は問いません。
+    </p>
+    <a class="cta-btn" href="https://docs.google.com/forms/d/15O4c5JuXxMfW3AqVZL24gryNHoQUl0s7HZ6nEuuGNwU/edit" target="_blank" rel="noopener">
+      お問い合わせ
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 松本香織 &ensp;|&ensp;
+  <a href="terms.html">利用規約</a>
+</footer>
+
+</body>
+</html>
